@@ -1,0 +1,18 @@
+ 
+
+			Textview Kullanımı 
+- activity_main.xml içerisinden ya da tıklanan elemanın properties kısmından da seçili elemanın özellikleri değiştirilebilir.
+- match_parent: İçinde bulunduğu kontrolün genişliği kadar büyütür.
+- wrap_component: içine yazılan yazı kadar büyür.
+- Linearlayout'un genişliğini de wrap_component yaparsak içerisine eklenen text kadar büyür.
+- Text içerisindeki ifadedeyi activity_main'den ya da values -> strings.xml içerisinden de değiştirebiliriz.
+-  <string name="deger">Marmara Üniversitesi</string> sonrada ilgili text içerisine @string/deger yazılarak string.xml içerisindeki deger'den yazılmış olan ifade çekilir.
+- textSize içerisinden yazının fontu ayarlanabilir. (25sp gibi)
+- android:layout_marginLeft="10dp" ile text ifadesi 10dp sağa kayar.
+- android:layout_marginLeft="10dp" ile text ifadesi 10dp aşağı kayar.
+- sadece margin değer verilirse sağdan/soldan/üstten/alttan girilen dp değeri kadar boşluk verir.
+- android:paddingLeft="10dp" komutu ile text componenti içerisindeki yazı 10dp sağa kayar.
+- <--   --> yorum satırı için.
+
+			Gravity, Layout Gravity ve Layout Weight
+-			
