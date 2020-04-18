@@ -1,4 +1,10 @@
- 
+ 				Layout
+- margintop : üstten koyulacak boşluk
+- android: layout_marginBottom ="90dp" 
+- android: layout_above="@+id/button5" // button5'in üstünde demek
+- <string name ="mesajdegistirme">MESAJ DEĞİŞTİRME</string> // şeklindeki tanımlama ile ilgili elemanın text kısmına @string/mesajdegistirme yazılması halinde "MESAJ DEĞİŞTİRME" yazısı gözükür.
+- Daha önce tanımlamış olduğumuz button textview gibi bileşenlerin kullanımını MainActivity.java içerisinde etkinleştiriyoruz.
+-  button1.setOnClickListener(new View.OnClickListener() // button1'e tıkladığımızda yapılacak olan işlemleri bu şekilde tanımlarız.
 
 			Textview Kullanımı 
 - activity_main.xml içerisinden ya da tıklanan elemanın properties kısmından da seçili elemanın özellikleri değiştirilebilir.
