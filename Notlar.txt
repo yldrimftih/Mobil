@@ -5,8 +5,19 @@
 - <string name ="mesajdegistirme">MESAJ DEĞİŞTİRME</string> // şeklindeki tanımlama ile ilgili elemanın text kısmına @string/mesajdegistirme yazılması halinde "MESAJ DEĞİŞTİRME" yazısı gözükür.
 - Daha önce tanımlamış olduğumuz button textview gibi bileşenlerin kullanımını MainActivity.java içerisinde etkinleştiriyoruz.
 -  button1.setOnClickListener(new View.OnClickListener() // button1'e tıkladığımızda yapılacak olan işlemleri bu şekilde tanımlarız.
+- Benzer bir durum için, layout'a verilen id lay olsun. lay.setBackgroundColor(Color.RED) yaparsak buton tıkladığımızda layout kırmızı olur.
+- Color.parseColor(#) ile # işaretinden sonra istenilen rengin html kodunu yazarak o renk elde edilir.
+- layout_weight="1" ile konulan butonların ekranı eşit büyüklükte paylaşması sağlanır.
+- setContentView(R.layout.activity_main) ile activity_main.java'yı xml dosyasına bağlamış oluyoruz.
+- Konulan buton ve textviewlerin tasarımı activity_main.xml içerisinde yapılır.
+
+				Toast
+
+- toast.setDuration(Toast.LENGTH_LONG); // ile belirtilen mesajın ekranda belirme süresini tanımlarız. LENGTH_LONG yerine ms cinsinden değer de yazabiliriz.
+- ikinciornek içresinde toast ve textview beraber kullanımı mevcut.
 
 			Textview Kullanımı 
+
 - activity_main.xml içerisinden ya da tıklanan elemanın properties kısmından da seçili elemanın özellikleri değiştirilebilir.
 - match_parent: İçinde bulunduğu kontrolün genişliği kadar büyütür.
 - wrap_component: içine yazılan yazı kadar büyür.
