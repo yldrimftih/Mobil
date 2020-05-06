@@ -10,12 +10,12 @@
 - layout_weight="1" ile konulan butonların ekranı eşit büyüklükte paylaşması sağlanır.
 - setContentView(R.layout.activity_main) ile activity_main.java'yı xml dosyasına bağlamış oluyoruz.
 - Konulan buton ve textviewlerin tasarımı activity_main.xml içerisinde yapılır.
-
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 				Toast
 
 - toast.setDuration(Toast.LENGTH_LONG); // ile belirtilen mesajın ekranda belirme süresini tanımlarız. LENGTH_LONG yerine ms cinsinden değer de yazabiliriz.
 - ikinciornek içresinde toast ve textview beraber kullanımı mevcut.
-
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 			Textview Kullanımı 
 
 - activity_main.xml içerisinden ya da tıklanan elemanın properties kısmından da seçili elemanın özellikleri değiştirilebilir.
@@ -30,6 +30,53 @@
 - sadece margin değer verilirse sağdan/soldan/üstten/alttan girilen dp değeri kadar boşluk verir.
 - android:paddingLeft="10dp" komutu ile text componenti içerisindeki yazı 10dp sağa kayar.
 - <--   --> yorum satırı için.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+			Butonların onClick Olaylarının Farklı Şekillerde Ele Alınması
 
-			Gravity, Layout Gravity ve Layout Weight
--			
+- Çok sayıda buton olması durumlarında her bir buton için button.setOnClickListener(new View.OnClickListener)
+  şeklinde yazmak yerine "public class MainActivity extends ActionBarActivity" satırını
+  "public class MainActivity extends ActionBarActivity implements View.OnClickListener" şeklinde yazıp "Implements Methods" ile overwrite ederek 
+  de daha kısa bir şekilde çözüm sağlamış oluruz.
+- @Override "public void onClick(View v)" içerisinde "int id =v.getId();" komutu ile tıklanan butonun id'si id değişkenine atanır.
+- Switch-Case kullanılarak farklı durumlar için farklı işlemlerin yapılması da bu şekilde sağlanmış olur.
+- Diğer önemli olan nokta ise; buttonların tanımlamaları yapıldıktan sonra "button.setOnClickListener(this);" tanımlaması "onCreate" içersinde yapılması gerekiyor.
+- Aynı şekilde "Button button = findViewById(R.id.button);" buton tanımlaması da "onCreate" içerisinde yapılıyor.
+- switch(id) case R.id.button //
+- Diğer yöntemde ise, button properties kısmında onClick kısmına herhangi bir fonksiyon yazılır örneğin "deneme".
+- Bunun xml içerisinde android:onClick="deneme". Sonrasında bunu MainActivty.java içerisinde public void deneme (View view){} yaparak da kullanabiliriz.// sonraki kısımlar aynı.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+			EditText Kullanımı
+- Kullanıcıdan alınacak metin ya da numara gibi girdileri kaynak kod tarafına iletmek için kullanılır.
+- activity_main.xml penceresinde ekrana gönderdiğimiz ögeyi MainActivity bölümüne gelerek :
+	EditText edittext = (EditText)findViewById(R.id.text);
+  şeklinde tanımlarız.
+- final değişkeni ile değerin değiştirilmemesi sağlanır. editText kullanımlarında önemli.
+- Android:textAllCaps=true yaparak textCaps içindeki yazıları büyütürüz.
+- Android:typeface=<monospace> // textType'ın fontunu <monospace> alırız.
+- Android:textStyle=<<italic>>
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+			AndroidManifest (altinciornekv2)
+- Yeni bir Activity, AndroidManifest dosyasında tanımlı değilse uygulamamız çöker.
+- Ekran geçişi sağlanırken AndroidManifest dosyasında bu ekranı eklememiz gerekir.
+- Yapacağımız uygulamanın türüne göre farklı aktivite sınıfları oluşturup intentler aracılığıyla bunlar arasında geçiş yaparız.
+- Android işletim sistemi, bir aktivitenin ya da servisin birbirlerini çağırması ve iletişime geçebilmesi için ortak bir yapı oluşturmuştur. Bu yapıya intent denir.
+- Örnek olarak, activity_main.xml layoutuna tıkladığımızda diğer sayfaya geçmesi için buton ekliyoruz.
+- Yeni bir activity oluşturuyoruz (java -> sağ tık -> new -> Activity)
+- Oluşturulan bu 2.Activity layoutumuza bir textView ekleyerek içerisine istenilen metni giriyoruz.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+			ListView 
+- Satırlardan oluşan bir tablo oluşturmak için kullanılır. Belirli bir kaynaktan(veritabanı, web servisi) çekilen veriyi göstermek için uygundur.
+- ListView, kendi içinde satır satır TextView ögeleri bulunduran bir yapıdır.
+- Bunun gibi birçok View'den oluşan görsel ögeler ViewGroup olarak da sınıflandırılır.
+- ListView Constraint üzerinde değil de Relative üzerinde daha verimli çalıştı. Ancak paddinglere dikkat. Özellikle üstten.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+			CheckBox
+- isChecked() -> CheckBox'ın işaretli olup olmadığını kontrol eder.
+- setOnCheckedChangeListener(OnCheckedChangeListener) : Bileşeni dinlememizi sağlar. Yani checkbox'ın durumu değişirse bununla görürüz.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+			RadioButton
+- 
