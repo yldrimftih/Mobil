@@ -79,4 +79,62 @@
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 			RadioButton
+- Bir butonda işaretli olan radio button'u aldık. Buttona tıklandığında radioGroup'taki seçili id'yi aldık ve ve buttonda bir Toast mesakı ile gösterdik.(radiobuttonornegi)
 - 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+			Switch
+- İki seçenek arasında seçim yapabilen iki durumlu bir geçiş anahtarıdır.
+- Temelde o anki Switch durumunu gösteren bir kapalı/açık butonudur.
+- Bir Switch'in o andaki durumunu programlı olarak isChecked() metodunu kullanarak kontrol ederiz.
+- Bu method boolean değer döndürür.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+			ToggleButton
+- Düğmedeki Açık/Kapalı durumunu görüntülemek için kullanılabilir.
+- Switch ile aynı amaç için kullanılır.
+- CompoundButton sınıfının alt sınıfır.
+- android:textOff // İşaretlenmediğinde düğme metni. //android:textOff="KAPALI" 
+- android:textOn  // İşaretlendiğinde düğme metni.  // android:textOn ="AÇIK"
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+			ImageView
+- Görüntü kaynaklarını uygulama içerisinde gösterilmesi için kullanılır.
+- activity_main.xml içerisinde tanımlması yapıldıktan sonra aynı tag içerisinde resmin kaynağı da atanması gerekir.
+- Örneğin : android:src ="@mipmap/ic_launcher"
+- SD kart gibi dış bir kaynaktan resim yüklemek için : 
+	String path = Environment.getExternalStorageDirectory()+"/Images/deneme_icon.jpg";
+	File file = new File(path);
+	if(file.exists())
+	{
+	 Bitmap bitmap = BitmapFactory.decodeFile(file.getAbsolutePath());
+	 ImageView img = findViewById(R.id.yourImageId);
+	 img.setImageBitmap(bitmap);
+	}
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+			WebView
+- Hibrit bir yapı varsa (belli sayfaları mobil uyumlu web siteleri gibi) ya da kullanıcıyı uygulamayı kapatmadan bir web sitesine yönlendirmek istiyorsak WebView bileşenini kullanırız.
+- WebView Android içerisinde web tarayıcısı gibi davranır.
+- Gerekli tanımlamaları yaptıktan sonra AndroidManifest.xml içerisinde 
+	<uses-permission android:name="android.permission.INTERNET"></uses-permission>
+  tanımlaması da yapılarak izin verilmelidir.
+- 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+			SeekBar
+- Kullanıcının bir seviye belirlemesini sağlayan bileşendir.
+- ProgressBar'ın imleç eklenmiş halidir.
+- Genellikle ses, media gibi ortamların kontrolü için kullanılır.
+- void setMax(int max) // SeekBar'ın maximum değerinin belirlenmesi için kullanılır. Default 100'dür.
+- void setOnSeekBarChangeListener(SeekBar.OnSeekBarChangeListener) // SeekBar'da gerçekleşen değişiklikleri yakalamak için kullanılır.
+- 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+			AlertDialog
+- Küçük bir pencere açılan ve bizlere uyarı gösteren, yaptığımız seçime göre işlemler yapan nesnelerdir.
+- alertDialogBuilder.setCancelable(): True ya da False değerleri alır. True dersek dialog penceresi açıldığında ekranın herhangi bir yerine tıklayarak uyarı penceresinden işlem yapmadan çıkabiliriz.
+- alertDialogBuilder.setIcon(): Dialog penceresinde bir icon görünmesini sağlayabiliriz.
+- 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+			progressdialog

@@ -1,0 +1,2 @@
+rootProject.name='progressdialog'
+include ':app'
