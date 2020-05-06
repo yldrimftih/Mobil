@@ -138,3 +138,18 @@
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 			progressdialog
+- Kullanıcıya bilgi mesajı vererek, ekran dönen şekilde bir dialog görebiliriz.
+	ProgressDialog progressDialog = new ProgressDialog(MainAcitivity.this);
+	progressDialog.setMessage("Devam eden işleminiz bulunmaktadır. Lütfen Bekleyiniz.");
+	progressDialog.show();
+- Şeklinde dinamic olarak ProgressDialog oluşturabiliriz.
+- setTitle(): Dialog için başlık kısmını oluşturur.
+- setMessage() : Dialog içinde yer alacak mesajı girebilmemizi sağlar.
+- setMax() : Dialog'da maksimum değeri ayarlamak için kullanılır.
+- setProgressStyle(ProgressDialog.STYLE_HORIZONTAL) : Açılan Dialogun ilerleme çubuğu şeklinde gösterilmesini sağlar.
+- setProgressStyle(ProgressDialog.STYLE_SPINNER) : Açılan Dialogun dönen çember şeklinde görülmesini sağlar.
+- getMax() : İlerlemenin maksimum değerini döndürür.
+- 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+			ToastMessage
+- Örneği yapıldı ancak notu alınmadı.
